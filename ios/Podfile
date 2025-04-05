@@ -1,3 +1,5 @@
+source 'https://cdn.cocoapods.org/'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -16,6 +18,7 @@ end
 
 target 'CameraMotion' do
   config = use_native_modules!
+  pod 'react-native-worklets-core', :path => '../node_modules/react-native-worklets-core'
 
   use_react_native!(
     :path => config[:reactNativePath],
